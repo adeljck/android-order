@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:id="@+id/first_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include layout="@layout/one_fragment_empty_view"
+            android:visibility="gone"
+            android:id="@+id/empty_view"/>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            app:srlEnablePreviewInEditMode="true"
+            android:id="@+id/one_fragment_sml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"/>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <com.zhy.autolayout.AutoLinearLayout
+                            android:gravity="center"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/home_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/dimen_50dp"
+                                    android:layout_marginLeft="@dimen/space_20px"
+                                    android:layout_weight="1.3"
+                                    android:drawableRight="@mipmap/down"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="送至: 湖南工学院"
+                                    android:textColor="@color/bottom_tab_text_normal_color"
+                                    android:textSize="15sp" />
+
+                                <com.zhy.autolayout.AutoLinearLayout
+                                    android:layout_weight="2"
+                                    android:id="@+id/home_search"
+                                    android:gravity="center"
+                                    android:layout_marginRight="@dimen/space_20px"
+                                    android:layout_marginLeft="@dimen/space_10px"
+                                    android:background="@drawable/grey_radius"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp">
+
+                                        <ImageButton
+                                            android:layout_marginRight="5dp"
+                                            android:background="@null"
+                                            android:src="@mipmap/icon_search"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+                                        <TextView
+                                            android:textSize="14sp"
+                                            android:textColor="@color/color_999"
+                                            android:text="@string/search_flag"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+                                </com.zhy.autolayout.AutoLinearLayout>
+
+
+                        </com.zhy.autolayout.AutoLinearLayout>
+
+                        <View
+                            android:background="@color/grey_divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/one_fragment_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:id="@+id/one_fragment_refresh_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"/>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>
